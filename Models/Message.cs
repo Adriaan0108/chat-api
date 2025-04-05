@@ -3,6 +3,7 @@ using chat_api.Models.Shared;
 
 namespace chat_api.Models;
 
+[Table("message")]
 public class Message : BaseModel<int>
 {
     [Column("sender_id")] public int SenderId { get; set; }
@@ -11,5 +12,5 @@ public class Message : BaseModel<int>
 
     // [Column("recipient_id")] public int RecipientId { get; set; }
 
-    public string Text { get; set; }
+    [Column("text")] public string Text { get; set; }
 }

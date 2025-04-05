@@ -1,6 +1,5 @@
 using chat_api.Dtos;
 using chat_api.Interfaces.Services;
-using chat_api.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace chat_api.Controllers;
@@ -12,7 +11,7 @@ public class ChatController : ControllerBase
     private readonly IChatService _chatService;
     private readonly IMessageService _messageService;
 
-    public ChatController(IChatService chatService, MessageService messageService)
+    public ChatController(IChatService chatService, IMessageService messageService)
     {
         _chatService = chatService;
         _messageService = messageService;

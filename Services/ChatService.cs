@@ -39,7 +39,7 @@ public class ChatService : IChatService
 
         foreach (var username in chatDto.Usernames)
         {
-            var user = _authService.GetPersonByUsername(username);
+            var user = await _authService.GetPersonByUsername(username);
 
             await CreateChatPerson(createdChat.Id, user.Id);
         }
